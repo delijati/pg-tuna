@@ -26,6 +26,6 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_namespace_packages(where="src"),
     install_requires=[],
-    extras_require={"tests": ["pytest", "pytest-cov"]},
+    extras_require={"tests": ["pytest", "pytest-cov", "flake8"]},
     entry_points={"console_scripts": ["pg-tuna = pg_tuna.wizard:main"]},
 )
