@@ -1,6 +1,6 @@
 # pg-tuna
 
-[![Build](https://github.com/delijati/pg-tuna/workflows/pg-tuna/badge.svg)](https://github.com/delijati/pg-tuna)
+[![pg_tuna](https://github.com/delijati/pg-tuna/actions/workflows/ci.yml/badge.svg)](https://github.com/delijati/pg-tuna/actions/workflows/ci.yml)
 [![PyPI version fury.io](https://badge.fury.io/py/pg-tuna.svg)](https://pypi.python.org/pypi/pg-tuna/)
 
 ```
@@ -101,4 +101,11 @@ $ docker run -it --env-file ./env.list -v `pwd`/bench:/var/bench pg_tuna/pgbench
 Run via local jumphost
 ```
 $ docker run -it --network="host" --env-file ./env.list -v `pwd`/bench:/var/bench pg_tuna/pgbench pgbench -c 10 -j 4 -t 100 -f /var/bench/select_count.sql
+```
+
+## Deploy
+```bash
+$ pip install build twine
+$ python -m build
+$ twine upload -r pypi dist/*
 ```
